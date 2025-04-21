@@ -230,7 +230,7 @@ const HeroBanner = () => {
               Now For 2025
             </motion.h2>
 
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 md:space-y-8">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 md:space-y-8 text-black">
               {/* Student Name */}
               <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.1 }}>
                 <input
@@ -266,10 +266,6 @@ const HeroBanner = () => {
                   aria-label="Parent Phone"
                   {...register("parentPhone", {
                     required: "Phone number is required",
-                    pattern: {
-                      value: /^[6-9]\d{9}$/,
-                      message: "Enter a valid 10-digit phone number",
-                    },
                   })}
                   className="w-full border-b border-black/[20%] focus:outline-none text-base md:text-lg2 xl:text-xl"
                 />
@@ -355,7 +351,7 @@ const HeroBanner = () => {
               <div className="justify-center flex">
                 <button
                   type="submit"
-                  className="w-full bg-[#FB7824] hover:bg-[#e7681e] text-white py-2 px-4 rounded-md flex justify-center items-center"
+                  className="w-full bg-[#FB7824] hover:bg-[#e7681e] cursor-pointer text-white py-2 px-4 rounded-md flex justify-center items-center"
                   disabled={loading}
                 >
                   {loading ? <ClipLoader color="#fff" size={20} /> : "Submit"}

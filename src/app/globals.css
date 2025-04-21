@@ -28,6 +28,7 @@ body {
   color: #4B4B4B; /* Darker gray for better contrast */
 }
 
+/* Add these styles for the infinite moving cards */
 @layer components {
   .animate-scroll {
     animation: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
@@ -50,4 +51,10 @@ body {
   100% {
     transform: translateX(-100%);
   }
+}
+
+.animate-marquee {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 30s linear infinite;
 }
