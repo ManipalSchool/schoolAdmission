@@ -314,7 +314,7 @@ const HeroBanner = () => {
                     <option className="text-black" value="IV">
                       IV
                     </option>
-                    <option className="text-black" value="V">
+                    {/* <option className="text-black" value="V">
                       V
                     </option>
                     <option className="text-black" value="VI">
@@ -337,7 +337,7 @@ const HeroBanner = () => {
                     </option>
                     <option className="text-black" value="XII">
                       XII
-                    </option>
+                    </option> */}
                   </select>
                 </label>
                 {errors.class && <p className="text-red-500 text-xs md:text-sm">{errors.class.message}</p>}
