@@ -1,10 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  experimental: {
-    appDir: true,
-  },
-  output: 'export',
   images: {
     unoptimized: true,
   },
@@ -12,9 +8,11 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: true, 
   },
-  trailingSlash: false, 
+  output: 'export',
+  
+  trailingSlash: true,
 };
 
-export default nextConfig;
+export default nextConfig;

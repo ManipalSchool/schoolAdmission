@@ -23,6 +23,12 @@ interface FormData {
   location: string;
 }
 
+declare global {
+  interface Window {
+    gtag: (...args: any[]) => void;
+  }
+}
+
 const CounsellingForm = () => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
@@ -58,7 +64,25 @@ const CounsellingForm = () => {
 
     const result = await response.json();
     if (result.result === "success") {
-      router.push("/thank-you");
+      if (typeof window !== "undefined" && typeof window.gtag === "function") {
+        console.log("Google tag found! Triggering conversion event...");
+      
+        const fallback = setTimeout(() => {
+          router.push("/thank-you");
+        }, 1000);
+      
+        window.gtag("event", "conversion", {
+          send_to: "AW-16998126623/DuBYCMHc7r0aEJ-oq6k_",
+          event_callback: () => {
+            clearTimeout(fallback);  // 👈 Cancel the fallback
+            router.push("/thank-you");
+          }
+        });
+      
+      } else {
+        console.log("Google tag is not available.");
+        router.push("/thank-you"); // maybe immediately push if no gtag
+      }
     } else {
       toast.error("Error submitting form.");
     }
@@ -142,7 +166,14 @@ const CounsellingForm = () => {
             <input
               type="tel"
               placeholder="Parent Phone Number"
-              {...register("parentPhone", { required: "Parent Phone is required" })}
+              {...register("parentPhone", {
+                required: "Phone Number is required",
+                pattern: {
+                  value: /^[0-9]{10}$/,
+                  message: "Phone Number must be exactly 10 digits"
+                }
+              })}
+              
               className="w-full px-1 pb-[7px] text-[#040707] bg-transparent border-0 border-b border-black/[20%] focus:outline-none text-xl"
             />
             {errors.parentPhone && <p className="text-red-500 text-sm mt-1">{errors.parentPhone.message}</p>}
@@ -237,7 +268,7 @@ const CounsellingForm = () => {
           {/* Logo and Address Section */}
           <div className="flex flex-col items-center text-center mb-8 mt-20 lg:mt-96 xl:mt-0">
             <div className="mb-4">
-              <Image src={logo} alt="Manipal School" className="h-12" />
+              <Image src={logo} alt="Manipal School" loading="lazy" className="h-12" />
             </div>
             <div className="text-sm text-gray-300 max-w-xl mx-auto">
               <p className="text-white">A Unit of Academy of General Education</p>
@@ -248,7 +279,7 @@ const CounsellingForm = () => {
           </div>
 
           {/* Contact Section */}
-          <div className="bg-[#FB7824] rounded-lg p-6 max-w-7xl mx-auto mb-8">
+          {/* <div className="bg-[#FB7824] rounded-lg p-6 max-w-7xl mx-auto mb-8">
             <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
               <div className="mb-4 md:mb-0">
                 <h3 className="text-xl font-semibold">For Admission Enquiries</h3>
@@ -278,11 +309,11 @@ const CounsellingForm = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
           {/* Social Links and Copyright */}
           <div className="flex flex-col items-center">
-            <h2 className="text-white text-center font-bold pb-4">Follow Us</h2>
-            <div className="flex gap-4 mb-4">
+            {/* <h2 className="text-white text-center font-bold pb-4">Follow Us</h2> */}
+            {/* <div className="flex gap-4 mb-4">
               <a href="https://www.instagram.com/manipal_school_mangaluru/?hl=en" className="hover:text-[#FB7824] transition-colors">
                 <span className="sr-only">LinkedIn</span>
                 <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -383,7 +414,7 @@ const CounsellingForm = () => {
                   />
                 </svg>
               </a>
-            </div>
+            </div> */}
 
             <hr className="border-t text-white/56  my-4 w-full " />
 

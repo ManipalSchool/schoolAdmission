@@ -42,7 +42,7 @@ const DiscoverSchool = () => {
                   />
                 </svg>
               </div>
-              <Image src={studentImage} alt="Students in classroom" className="object-cover w-[100%] h-[100%] rounded-2xl z-0" />
+              <Image priority src={studentImage} alt="Students in classroom" className="object-cover w-[100%] h-[100%] rounded-2xl z-0" />
             </motion.div>
 
             {/* Content section */}
@@ -64,12 +64,13 @@ const DiscoverSchool = () => {
                     Manipal School, Mangalore, is a trusted institution known for its excellence in academics and holistic development, making it the
                     preferred choice for parents seeking quality education in the heart of the city. Affiliated with CBSE (830495), we follow
                     Pearson’s Nurture curriculum in Kindergarten before transitioning to CBSE for Grades 1–12.
-                    
-                    </p> <p> Our student-centric approach ensures
-                    top-tier health, safety & protection standards, while technology-enabled learning equips students for a tech-driven world. Beyond
-                    academics, we encourage active participation in sports & extra-curricular, shaping well-rounded individuals. Signature programs
-                    like Manipal Mind-Spark, our annual innovation-driven exhibition, celebrate student creativity. Our Mentor-Mentee Program provides
-                    personalized guidance, empowering students to achieve their full potential.
+                  </p>{" "}
+                  <p>
+                    {" "}
+                    Our student-centric approach ensures top-tier health, safety & protection standards, while technology-enabled learning equips
+                    students for a tech-driven world. Beyond academics, we encourage active participation in sports & extra-curricular, shaping
+                    well-rounded individuals. Signature programs like Manipal Mind-Spark, our annual innovation-driven exhibition, celebrate student
+                    creativity. Our Mentor-Mentee Program provides personalized guidance, empowering students to achieve their full potential.
                   </p>
                 </div>
               </div>

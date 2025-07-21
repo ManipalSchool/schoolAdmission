@@ -13,30 +13,30 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-
 export const metadata: Metadata = {
-  title: "Manipal School | Best School in Mangalore",
+  title: "Admissions Open 2025 | Manipal School Mangalore | Apply Now",
   description:
-    "Manipal School is a leading institution in Mangalore, providing quality education, modern facilities, and a nurturing environment for students to excel academically and personally.",
+    "Admissions Open 2025! Join Manipal School, one of Karnataka’s top CBSE schools in Mangalore. Apply online now for quality education, modern facilities, and a nurturing environment.",
   keywords: [
-    "Manipal School",
-    "Best School in Mangalore",
-    "Top Schools in Karnataka",
-    "CBSE Schools in Mangalore",
-    "ICSE Schools in Mangalore",
-    "Best Education for Kids",
-    "Manipal Education",
-    "Schools near me",
+    "Manipal School Admissions 2025",
+    "CBSE School Admission Mangalore",
+    "Top CBSE Schools Karnataka",
+    "Apply to Manipal School",
+    "Best Schools for Admissions",
+    "School Admission Process",
+    "School Rankings Karnataka",
+    "Manipal School Fees",
+    "Scholarships at Manipal School",
   ],
   openGraph: {
-    title: "Manipal School | Best School in Mangalore",
+    title: "Admissions Open 2025 | Manipal School Mangalore | Apply Now",
     description:
-      "Join Manipal School, a premier educational institution in Mangalore, known for excellence in academics, extracurricular activities, and student development.",
-    url: "https://www.manipalschool.edu.in/", // Replace with the actual website URL
+      "Apply now for admissions at Manipal School, Mangalore. Discover our top rankings, excellent academic record, and world-class facilities for holistic student development.",
+    url: "https://www.manipalschool.edu.in/",
     siteName: "Manipal School",
     images: [
       {
-        url: "https://apply.manipalschool.edu.in/icon.png", // Replace with an actual Open Graph image
+        url: "https://apply.manipalschool.edu.in/icon.png",
         width: 1200,
         height: 630,
         alt: "Manipal School Campus",
@@ -46,11 +46,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Manipal School | Best School in Mangalore",
-    description: "Providing top-quality education with modern facilities and a student-centric approach at Manipal School, Mangalore.",
-    images: [
-      "https://apply.manipalschool.edu.in/icon.png",
-    ], // Replace with actual image path
+    title: "Admissions Open 2025 | Manipal School Mangalore | Apply Now",
+    description:
+      "Join Manipal School, a top CBSE school in Karnataka. Apply online today to secure your child’s future with quality education and a nurturing environment.",
+    images: ["https://apply.manipalschool.edu.in/icon.png"],
   },
 };
 
@@ -62,7 +61,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      <script
+        <script
           dangerouslySetInnerHTML={{
             __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -73,6 +72,18 @@ export default function RootLayout({
             `,
           }}
         />
+        {/* Google Ads / gtag */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16998126623" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-16998126623');
+      `,
+          }}
+        />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <noscript>
@@ -80,12 +91,13 @@ export default function RootLayout({
             src="https://www.googletagmanager.com/ns.html?id=GTM-KJ9K99ZX"
             height="0"
             width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
+            style={{ display: "none", visibility: "hidden" }}
           ></iframe>
-        </noscript>
+          
+        </noscript>
         <Toaster position="top-right" />
         {children}
-        <WhatsappChatWidget />
+        {/* <WhatsappChatWidget /> */}
       </body>
     </html>
   );

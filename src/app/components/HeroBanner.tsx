@@ -10,10 +10,10 @@ import { IconMapPin } from "@tabler/icons-react";
 import Link from "next/link";
 import { ClipLoader } from "react-spinners";
 // import "react-responsive-carousel/lib/styles/carousel.min.css";
-import websitebg1 from "../../../public/images/BannerImage1.webp";
-import websitebg2 from "../../../public/images/BannerImage2.webp";
-import websitebg3 from "../../../public/images/BannerImage3.webp";
-import websitebg4 from "../../../public/images/BannerImage4.webp";
+import websitebg1 from "../../../public/images/BannerImage1.jpg";
+import websitebg2 from "../../../public/images/BannerImage2.jpg";
+import websitebg3 from "../../../public/images/BannerImage3.jpg";
+import websitebg4 from "../../../public/images/BannerImage4.jpg";
 import logo from "../../../public/images/logo/manipalHead.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -28,6 +28,12 @@ interface FormData {
   parentPhone: string;
   class: string;
   location: string;
+}
+
+declare global {
+  interface Window {
+    gtag: (...args: any[]) => void;
+  }
 }
 
 const HeroBanner = () => {
@@ -51,7 +57,26 @@ const HeroBanner = () => {
 
       const result = await response.json();
       if (result.result === "success") {
-        router.push("/thank-you");
+        if (typeof window !== "undefined" && typeof window.gtag === "function") {
+          console.log("Google tag found! Triggering conversion event...");
+        
+          const fallback = setTimeout(() => {
+            router.push("/thank-you");
+          }, 1000);
+        
+          window.gtag("event", "conversion", {
+            send_to: "AW-16998126623/DuBYCMHc7r0aEJ-oq6k_",
+            event_callback: () => {
+              clearTimeout(fallback);  // 👈 Cancel the fallback
+              router.push("/thank-you");
+            }
+          });
+        
+        } else {
+          console.log("Google tag is not available.");
+          router.push("/thank-you"); // maybe immediately push if no gtag
+        }
+        
       } else {
         toast.error("Error submitting form.");
       }
@@ -72,35 +97,14 @@ const HeroBanner = () => {
       {/* Top Contact Bar */}
       <div className="bg-orange-500 text-white text-sm py-4 px-4 overflow-hidden whitespace-nowrap">
         <div className="relative flex space-x-10 animate-marquee">
-          {/* Repeated contact info */}
-          {Array(6)
-            .fill(null)
-            .map((_, i) => (
-              <p key={i}>
-                Contact Admission Managers Phone:
-                <Link href="tel:+919538820398" passHref >
-                  +91 9538820398 /
-                </Link>
-                <Link href="tel:+919902875329" passHref >
-                  +91 9902875329
-                </Link>
-                | Office Telephone:
-                <Link href="tel:+918244252305" passHref >
-                  0824-4252305
-                </Link>{" "}
-                |
-                <Link href="mailto:info@manipalschool.edu.in" passHref >
-               info@manipalschool.edu.in
-                </Link>
-              </p>
-            ))}
+        
         </div>
       </div>
       {/* Header */}
       <header className="bg-white shadow-sm">
         <div className=" mx-auto py-4 px-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <Image src={logo} alt="Manipal School Logo" className="h-12" />
+            <Image priority src={logo} alt="Manipal School Logo" className="h-12" />
           </div>
           <div
             onClick={() => window.open("https://maps.app.goo.gl/1VF8MxuicvabAJoT9", "_blank")}
@@ -265,8 +269,13 @@ const HeroBanner = () => {
                   required
                   aria-label="Parent Phone"
                   {...register("parentPhone", {
-                    required: "Phone number is required",
+                    required: "Phone Number is required",
+                    pattern: {
+                      value: /^[0-9]{10}$/,
+                      message: "Phone Number must be exactly 10 digits"
+                    }
                   })}
+                  
                   className="w-full border-b border-black/[20%] focus:outline-none text-base md:text-lg2 xl:text-xl"
                 />
                 {errors.parentPhone && <p className="text-red-500 text-xs md:text-sm">{errors.parentPhone.message}</p>}

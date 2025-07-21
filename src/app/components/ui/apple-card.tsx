@@ -23,7 +23,7 @@ export const BlurImage = ({ height, width, src, className, alt, ...rest }: Image
       src={src || "/placeholder.svg"}
       width={width}
       height={height}
-      loading="lazy"
+      priority
       decoding="async"
       blurDataURL={typeof src === "string" ? src : undefined}
       alt={alt ? alt : "Background of a beautiful view"}

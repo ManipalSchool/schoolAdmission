@@ -14,7 +14,6 @@ import Testimonials from "./components/Testimonials";
 export default function Home() {
   return (
     <section className="overflow-hidden">
-      
       <HeroBanner/>
       <AboutSchool/>
       <DiscoverSchool/>

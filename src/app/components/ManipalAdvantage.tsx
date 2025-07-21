@@ -39,6 +39,7 @@ const ManipalAdvantage = () => {
             src={advantageImage1}
             className="object-cover w-full h-[200px] rounded-2xl" // Adjust image height as needed
             alt="Students in classroom"
+            priority
           />
           <div className="">
             <h2 className="font-bold pt-8 text-[1.5rem] leading-7 text-black mb-2">Well-Equipped Future Ready Digital Classrooms</h2>
@@ -56,6 +57,7 @@ const ManipalAdvantage = () => {
             src={advantageImage2}
             className="object-cover w-full h-[200px] rounded-2xl" // Adjust image height as needed
             alt="Students in classroom"
+            priority
           />
           <div className="">
             <h2 className="font-bold pt-10 text-[1.5rem] leading-7 text-black mb-2">Where Curiosity Grows</h2>
@@ -73,6 +75,7 @@ const ManipalAdvantage = () => {
             src={advantageImage3}
             className="object-cover w-full h-[200px] rounded-2xl" // Adjust image height as needed
             alt="Students in classroom"
+            priority
           />
           <div className="">
             <h2 className="font-bold pt-10 text-[1.5rem] leading-7 text-black mb-2">Smart Learning & Innovation Hub</h2>
@@ -87,6 +90,7 @@ const ManipalAdvantage = () => {
         >
           <Image
             src={advantageImage4}
+            priority
             className="object-cover w-full h-[200px] rounded-2xl" // Adjust image height as needed
             alt="Students in classroom"
           />
@@ -105,7 +109,7 @@ const ManipalAdvantage = () => {
           viewport={{ once: true }}
           className="relative col-span-2 rounded-2xl overflow-hidden h-[380px]"
         >
-          <Image src={advantageImage1} className="absolute inset-0 object-cover h-[100%] w-[100%]" alt="Students in classroom" />
+          <Image src={advantageImage1} priority className="absolute inset-0 object-cover h-[100%] w-[100%]" alt="Students in classroom" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent z-10" />
           <div className="absolute z-100 inset-0 p-8 flex flex-col justify-start">
             <h2 className="font-bold text-[2rem] leading-9 text-white mb-2 max-w-2/4">Well-Equipped Future Ready Digital Classrooms</h2>
@@ -137,7 +141,7 @@ const ManipalAdvantage = () => {
           viewport={{ once: true }}
           className="relative rounded-2xl overflow-hidden h-[380px]"
         >
-          <Image src={advantageImage2} className="absolute inset-0 w-full h-full object-cover" alt="Library" />
+          <Image src={advantageImage2} priority className="absolute inset-0 w-full h-full object-cover" alt="Library" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent z-10" />
           <div className="absolute z-100 inset-0 p-8 flex flex-col justify-start">
             <h2 className="text-[2rem] leading-none font-bold text-white mb-2 max-w-3/4">Where Curiosity Grows</h2>
@@ -169,9 +173,9 @@ const ManipalAdvantage = () => {
           viewport={{ once: true }}
           className="relative rounded-2xl overflow-hidden h-[380px]"
         >
-         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-transparent z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-transparent z-10" />
 
-          <Image src={advantageImage3} className="absolute inset-0 w-full h-full object-cover z-0" alt="Innovation Hub" />
+          <Image src={advantageImage3} priority className="absolute inset-0 w-full h-full object-cover z-0" alt="Innovation Hub" />
 
           {/* Gradient Overlay */}
 
@@ -205,7 +209,7 @@ const ManipalAdvantage = () => {
           viewport={{ once: true }}
           className="relative col-span-1 rounded-2xl overflow-hidden h-[380px]"
         >
-          <Image src={advantageImage4} className="absolute inset-0 w-full h-full object-cover" alt="Student performing" />
+          <Image src={advantageImage4} priority className="absolute inset-0 w-full h-full object-cover" alt="Student performing" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent z-10" />
           <div className="absolute z-100 inset-0 p-8 flex flex-col justify-start">
             <h2 className="text-3xl font-bold text-white mb-2 text-[2rem]">Where Talents are Nurtured</h2>

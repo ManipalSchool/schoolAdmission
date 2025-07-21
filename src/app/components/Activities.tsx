@@ -86,7 +86,7 @@ function Activities() {
             title="Expansive Library"
             description="Manipal School boasts well-stocked libraries that serve as vibrant learning hubs, offering a diverse collection of periodicals, journals, magazines, newsletters, encyclopedias, fiction, and reference books. Our libraries go beyond traditional reading by integrating structured learning programs, including phonics for early learners and literary classics for older students. We are committed to providing a rich reading culture, inspiring students to explore, engage, and develop a lifelong love for books"
             imageUrl="/images/activityImages/activityImage1.jpg"
-            imageUrl2="/images/activityImages/Image1.png"
+            imageUrl2="/images/activityImages/Image1.jpg"
             className="lg:col-span-3 md:col-span-5 row-span-2 mt-56"
             gradientColor="#FECBE5"
             delay={0.1}
@@ -98,7 +98,7 @@ function Activities() {
 To support overall well-being, we incorporate yoga into our curriculum, fostering mindfulness and inner balance. Additionally, Karate training is offered to instill discipline, confidence, and self-defense skills, promoting both physical and mental resilience. Our structured sports program for Junior school students, curated by our training partner Edusports, ensures that every student develops essential athletic skills and gains exposure to various sports. 
 "
             imageUrl="/images/activityImages/activityImage2.jpg"
-            imageUrl2="/images/activityImages/Image2.png"
+            imageUrl2="/images/activityImages/Image2.jpg"
 
             className="lg:col-span-3 md:col-span-5 row-span-1 top-32"
             gradientColor="#2B9FF7"
@@ -109,7 +109,7 @@ To support overall well-being, we incorporate yoga into our curriculum, fosterin
             title="Insightful Guest Lectures"
             description="At Manipal School, we enrich our students' learning experience by hosting insightful guest lectures delivered by industry experts and academicians. These sessions provide valuable real-world perspectives, inspire critical thinking, and broaden students' horizons. Through interactive discussions and expert guidance, our students gain deeper insights into various fields, helping them make informed academic and career choices."
             imageUrl="/images/activityImages/activityImage3.jpg"
-            imageUrl2="/images/activityImages/Image3.png"
+            imageUrl2="/images/activityImages/Image3.jpg"
 
             className="lg:col-span-3 md:col-span-5 row-span-2"
             gradientColor="#FBD034"
@@ -123,7 +123,7 @@ To support overall well-being, we incorporate yoga into our curriculum, fosterin
             className="lg:col-span-3 md:col-span-5 row-span-1 top-20"
             gradientColor="#AF84CC"
             delay={0.4}
-            imageUrl2="/images/activityImages/Image4.png"
+            imageUrl2="/images/activityImages/Image4.jpg"
 
             index={3} // From right
           />
@@ -133,7 +133,7 @@ To support overall well-being, we incorporate yoga into our curriculum, fosterin
             imageUrl="/images/activityImages/activityImage5.jpg"
             className="lg:col-span-3 md:col-span-5 row-span-2 top-36"
             gradientColor="#31CB6E"
-            imageUrl2="/images/activityImages/Image5.png"
+            imageUrl2="/images/activityImages/Image5.jpg"
 
             delay={0.5}
             index={4} // From left
@@ -146,7 +146,7 @@ To support overall well-being, we incorporate yoga into our curriculum, fosterin
             gradientColor="#FB7824"
             delay={0.6}
             index={5} // From right
-            imageUrl2="/images/activityImages/Image6.png"
+            imageUrl2="/images/activityImages/Image6.jpg"
 
           />
         </div>
@@ -159,7 +159,7 @@ To support overall well-being, we incorporate yoga into our curriculum, fosterin
             gradientColor="#FECBE5"
             delay={0.1}
             index={0}
-            imageUrl2="/images/activityImages/Image1.png"
+            imageUrl2="/images/activityImages/Image1.jpg"
 
           />
           <FacilityCard
@@ -171,7 +171,7 @@ To support overall well-being, we incorporate yoga into our curriculum, fosterin
             className="col-span-1"
             gradientColor="#2B9FF7"
             delay={0.2}
-            imageUrl2="/images/activityImages/Image2.png"
+            imageUrl2="/images/activityImages/Image2.jpg"
 
             index={1}
           />
@@ -183,7 +183,7 @@ To support overall well-being, we incorporate yoga into our curriculum, fosterin
             gradientColor="#FBD034"
             delay={0.3}
             index={2}
-            imageUrl2="/images/activityImages/Image3.png"
+            imageUrl2="/images/activityImages/Image3.jpg"
 
           />
           <FacilityCard
@@ -193,7 +193,7 @@ To support overall well-being, we incorporate yoga into our curriculum, fosterin
             className="col-span-1"
             gradientColor="#AF84CC"
             delay={0.4}
-            imageUrl2="/images/activityImages/Image4.png"
+            imageUrl2="/images/activityImages/Image4.jpg"
 
             index={3}
           />
@@ -204,7 +204,7 @@ To support overall well-being, we incorporate yoga into our curriculum, fosterin
             className="col-span-1"
             gradientColor="#31CB6E"
             delay={0.5}
-            imageUrl2="/images/activityImages/Image5.png"
+            imageUrl2="/images/activityImages/Image5.jpg"
 
             index={4}
           />
@@ -215,7 +215,7 @@ To support overall well-being, we incorporate yoga into our curriculum, fosterin
             className="col-span-1"
             gradientColor="#FB7824"
             delay={0.6}
-            imageUrl2="/images/activityImages/Image6.png"
+            imageUrl2="/images/activityImages/Image6.jpg"
 
             index={5}
           />
