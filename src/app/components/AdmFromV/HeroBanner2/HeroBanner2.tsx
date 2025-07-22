@@ -10,11 +10,11 @@ import { IconMapPin } from "@tabler/icons-react";
 import Link from "next/link";
 import { ClipLoader } from "react-spinners";
 // import "react-responsive-carousel/lib/styles/carousel.min.css";
-import websitebg1 from "../../../public/images/BannerImage1.jpg";
-import websitebg2 from "../../../public/images/BannerImage2.jpg";
-import websitebg3 from "../../../public/images/BannerImage3.jpg";
-import websitebg4 from "../../../public/images/BannerImage4.jpg";
-import logo from "../../../public/images/logo/manipalHead.svg";
+import websitebg1 from "../../../../../public/images/BannerImage1.jpg";
+import websitebg2 from "../../../../../public/images/BannerImage2.jpg";
+import websitebg3 from "../../../../../public/images/BannerImage3.jpg";
+import websitebg4 from "../../../../../public/images/BannerImage4.jpg";
+import logo from "../../../../../public/images/logo/manipalHead.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
@@ -293,7 +293,7 @@ const HeroBanner = () => {
                     <option value="" disabled className="!text-gray-400 text-base md:text-lg2 xl:text-xl placeholder:text-white">
                       Class Being Applied For
                     </option>
-                    <option className="text-black" value="Nursery">
+                    {/* <option className="text-black" value="Nursery">
                       Nursery
                     </option>
                     <option className="text-black" value="PP I">
@@ -313,8 +313,8 @@ const HeroBanner = () => {
                     </option>
                     <option className="text-black" value="IV">
                       IV
-                    </option>
-                    {/* <option className="text-black" value="V">
+                    </option> */}
+                    <option className="text-black" value="V">
                       V
                     </option>
                     <option className="text-black" value="VI">
@@ -337,7 +337,7 @@ const HeroBanner = () => {
                     </option>
                     <option className="text-black" value="XII">
                       XII
-                    </option> */}
+                    </option>
                   </select>
                 </label>
                 {errors.class && <p className="text-red-500 text-xs md:text-sm">{errors.class.message}</p>}
